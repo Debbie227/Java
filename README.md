@@ -22,18 +22,6 @@ This Java program performs a nucleotide BLAST search using the NCBI BLAST API. T
 - **Java 8 or higher**: The program is written in Java, so you'll need a JDK to compile and run it.
 - **BioJava**: The program uses the [BioJava library](https://biojava.org/) for parsing biological sequence data and interacting with the NCBI API.
   
-You can include the BioJava dependency in your project by adding it to your `pom.xml` if you're using Maven or by downloading the jar files directly.
-
-#### Example Maven dependency:
-
-```xml
-<dependency>
-    <groupId>org.biojava</groupId>
-    <artifactId>biojava-core</artifactId>
-    <version>5.3.0</version>
-</dependency>
-```
-
 ### Setting Up the Project
 
 1. Clone this repository to your local machine:
@@ -42,18 +30,17 @@ You can include the BioJava dependency in your project by adding it to your `pom
 git clone https://github.com/Debbie227/ebi-blast-search.git
 ```
 
-2. Install dependencies (if using Maven):
+2. Install dependencies:
 
-```bash
-mvn install
-```
+biojava-core-5.3.0.jar
 
 ### Usage
 
 The program is run from the command line and accepts no arguments:
 
 ```bash
-java -jar BlastSearchTool.jar
+javac BLASTandParse.java
+java BLASTandParse
 ```
 
 ### Input:
@@ -68,16 +55,17 @@ java -jar BlastSearchTool.jar
 
 ### Example Usage:
 
-1. Using a FASTA file:
+1. Java 11 or above:
 
 ```bash
-java -jar BlastSearchTool.jar input_sequence.fasta output_results.txt
+java BLASTandParse.java
 ```
 
-2. Using a manually entered sequence:
+2. Java 10 or below:
 
 ```bash
-    java -jar BlastSearchTool.jar "ATGCGTACGGTGCTAGCTAG" output_results.txt
+javac BLASTandParse.java
+java BLASTandParse
 ```
 
 ### Example Output Format:
@@ -106,10 +94,10 @@ The output file will contain the following columns, separated by tabs:
 ebi-blast-search/
 │
 ├── src/
-│   └── BLASTandParse.java.java       # Main Java file for running the BLAST search
+│   └── BLASTandParse.java       # Main Java file for running the BLAST search
 │
 ├── lib/
-│   └── biojava-core-5.3.0.jar    # BioJava library (or include via Maven)
+│   └── biojava-core-5.3.0.jar    # BioJava library
 │
 ├── input/
 │   └── sample_sequence.fasta     # Example input sequence file
@@ -117,7 +105,6 @@ ebi-blast-search/
 ├── output/
 │   └── sample_output.txt         # Example output file (generated after running the program)
 │
-├── pom.xml                      # Maven dependency configuration (if using Maven)
 └── README.md                    # Project documentation (this file)
 ```
 
