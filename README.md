@@ -106,7 +106,7 @@ The output file will contain the following columns, separated by tabs:
 ebi-blast-search/
 │
 ├── src/
-│   └── BlastSearchTool.java       # Main Java file for running the BLAST search
+│   └── BLASTandParse.java.java       # Main Java file for running the BLAST search
 │
 ├── lib/
 │   └── biojava-core-5.3.0.jar    # BioJava library (or include via Maven)
